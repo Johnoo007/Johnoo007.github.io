@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Anaheim:wght@400..800&family=Maitree:wght@200;300;400;500;600;700&family=Martel:wght@200;300;400;600;700;800;900&family=Tillana:wght@400;500;600;700;800&display=swap" 
+      rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <div class="icon" onclick="window.location.href='/'" >
+      FunLab
+    </div>
+
+    <div class="game">
+      <header class="game_title">Tic Tac Toe</header>
+
+      <div class="current_player"></div>
+      <div class="game_container"></div>
+      <div class="score_board">
+        <div class="score_title">Score:</div>
+        <div class="o_wrapper">
+          <div class="score_label"></div>
+          <!-- <div class="o_score"></div> -->
+        </div>
+        <div class="x_wrapper">
+          <div class="score_label"></div>
+          <!-- <div class="x_score"></div> -->
+        </div>
+      </div>
+      <div class="game_message_container"></div>
+    </div>
+    <span class="switch">
+        
+        <input type="checkbox" id = "turnSwitch" disabled>
+        <label for="turnSwitch">
+        
+          <!-- <span class="turn-text-x">X's Turn</span>
+          <span class="turn-text-o">O's Turn</span> -->
+        </label>
+        <div class="x1_score x_score">1</div>
+        <div class="y1_score o_score">1</div>
+    </span>
+
+    <br>
+    <button onclick="game.newGame()">New Game</button>
+    <button onclick="game.setMode('PvP')">Player vs Player</button>
+    <button onclick="game.setMode('AI')">Player vs AI</button>
+
+    
+
+    <script src="index.js"></script>
+  </body>
+</html>

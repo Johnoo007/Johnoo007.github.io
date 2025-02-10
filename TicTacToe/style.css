@@ -1,0 +1,316 @@
+:root {
+  --bg-color: #f4f6f7;
+  --main-color: #4b685f;
+  --text-color: #cbc4c0;
+  --color-o: #03b28b;
+  --border-o: #03b28cb2;
+  --color-x: #ff5346;
+  --border-x: #ff52469c;
+}
+
+* {
+  margin: 0;
+  font-family: 'Encode Sans', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.game {
+  position: relative;
+}
+
+.game_title {
+  font-size: 3rem;
+  text-decoration: underline;
+  text-align: center;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: var(--main-color);
+}
+
+.current_player {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--main-color);
+}
+
+.game_container {
+  margin: auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game_row {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game_cell {
+  width: 100px;
+  height: 100px;
+  border: 2px solid var(--border-o);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.game_cell:hover {
+  font-size: 4rem;
+  transform: scale(1.01);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.game_cell.filled {
+  font-size: 4rem;
+  cursor: default;
+  animation: animate 200ms 1;
+  transition: font-size 200ms ease-in-out;
+}
+
+@keyframes animate {
+  0% {
+    font-size: 1px;
+  }
+  60% {
+    font-size: 6rem;
+  }
+  100% {
+    font-size: 4rem;
+  }
+}
+
+.score_board {
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score_title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.o_wrapper,
+.x_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.score_label {
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.o_wrapper {
+  color: var(--color-o);
+}
+
+.x_wrapper {
+  color: var(--color-x);
+}
+
+/* .x_score,
+.o_score {
+  font-size: 1.5rem;
+  padding: 5px;
+  opacity: 0.8;
+} */
+
+.game_message_container {
+  z-index: 10;
+  position: absolute;
+  transform: translate(-200px, -100px);
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 200px;
+  display: none;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  background: var(--border-o);
+  opacity: 1;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 320px) {
+  .game_message_container {
+    position: absolute;
+    top: 50%;
+    min-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.game_message_container:hover {
+  cursor: pointer;
+}
+
+.icon {
+    font-family: Tillana;
+    position: fixed;
+    top: 0;
+    left: 1vw;
+    font-size: 30px;
+    max-height: 80px;
+    color: black;
+    transition: transform 0.3s, cursor 0.3s;    
+    z-index: 1000; 
+}
+
+.icon:hover {
+  cursor: pointer;
+  transform: scale(1.035);
+}
+
+
+.switch {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  margin-top: 10px;
+  border-radius: 25px;
+}
+
+.switch input{
+  appearance: none;
+  width: 200px;
+  height: 100px;
+  border-radius: 12px;
+  background-color: #1E1E1E;
+  outline: none;
+  
+}
+
+.switch input::before,
+.switch input::after{
+  z-index: 2;
+  position: absolute;
+  top: 56%;
+  transform: translateY(-50%);
+  font-weight: bolder;
+  
+}  
+
+.switch input::before{
+  content: "X's Turn";
+  left: 28px;
+  top: 25px;
+}
+
+.switch input::after{
+  content: "O's Turn";
+  right: 28px;
+  top: 25px;
+}
+
+.switch input:checked{
+  background-color: #ff9800;
+}
+
+.switch label{
+  z-index: 1;
+  position: absolute;
+  top: 7px;
+  bottom: 7px;
+  border-radius: 12px;
+}
+
+.switch input{
+  transition: 0.25s;
+}
+
+.switch input::before,
+.switch input::after{
+  color: #fff;
+  transition: color 0.5s;
+}
+
+.switch input:checked+label{
+  left: 10px;
+  right: 100px;
+  background: #1E1E1E;
+  transition: left 0.5s , right 0.4s 0.2s;
+}
+
+.switch input:not(:checked){
+  background: #1E1E1E;
+  transition: background 0.4s;
+}
+
+.switch input:not(:checked)::before{
+  color: #fff;
+  transition: color 0.5s;
+}
+
+.switch input:not(:checked)::after{
+  color: #1E1E1E;
+  transition: color 0.5s 0.2s;
+}
+
+.switch input:not(:checked) +label{
+  left: 100px;
+  right: 10px;
+  background: #ff9800;
+  transition: left 0.4s 0.2s , right 0.5s , background 0.35s;
+}
+
+
+.switch input:checked ~ .Y1_score {
+  color: #fff; /* สีเมื่อ switch ถูกเช็ค */
+  transition: color 0.5s;
+}
+
+.switch input:not(:checked) ~ .Y1_score {
+  color: #1e1e1e; /* สีเมื่อ switch ไม่ถูกเช็ค */
+  transition: color 0.5s 0.2s;
+}
+
+.X1_score {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  position: absolute;
+  top: 43px;  /* ตำแหน่งที่ต้องการให้อยู่เหนือปุ่ม */
+  left: 47px;
+  transition: color 0.5s;
+  font-size: 30px;
+  color: #fff;
+  z-index: 1000;
+}
+.Y1_score {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  position: absolute;
+  top: 43px;  /* ตำแหน่งที่ต้องการให้อยู่เหนือปุ่ม */
+  right: 45px;
+  transition: color 0.5s;
+  font-size: 30px;
+  z-index: 1000;
+  color: #be4141;
+}
