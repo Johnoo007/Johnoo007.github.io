@@ -321,6 +321,11 @@ body {
   width: 170px;
   height: 40px;
   background-color: #ff9800;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 /* .bt_player {
