@@ -321,14 +321,12 @@ body {
   width: 170px;
   height: 40px;
   background-color: #ff9800;
-  border: none;
   color: white;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  outline: none;
   justify-content: center;
   align-items: center;
   margin-bottom: 15px;
