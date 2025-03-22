@@ -316,7 +316,11 @@ body {
   color: #be4141;
 }
 
-.bt_player {
+.bt_player{
+  background-color: #ff9800;
+}
+
+/* .bt_player {
   display: flex;
   width: 170px;
   height: 40px;
@@ -330,7 +334,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 15px;
-}
+} */
 
 .bt_player:hover {
   transform: scale(1.04);
