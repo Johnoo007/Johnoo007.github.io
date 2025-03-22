@@ -54,6 +54,7 @@ class Game {
     this.board = new Array(9).fill('');
     this.showMessage = false;
     this.firstPlayer = this.player.xPlayer; // ให้ _ เริ่มก่อนในเกมแรก
+    this.mode = "AI"
 
     this.newGame();
   }
