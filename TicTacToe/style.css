@@ -317,6 +317,9 @@ body {
 }
 
 .bt_player{
+  display: flex;
+  width: 170px;
+  height: 40px;
   background-color: #ff9800;
 }
 
